@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<head>
+		<title></title>			
+	</head>
+	<body>
+		<button id="btn">click me</button>
+		<p>我是p</p>
+		<div>我是div</div>
+	<script type="text/javascript">
+		//鼠标点击页面中任意标签，alert该标签名称
+		document.onclick=function(e){
+			e=e||window.event;
+			var o=e.srcElement||e.target;
+			alert(o.tagName);
+		}
+	</script>
+	</body>
+</html>
