@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<head>
+			<title></title>
+			<style type="text/css">
+			div{
+				width: 500px;
+				height: 500px;
+				background-color: red;
+			}
+			</style>
+			<script type="text/javascript" src="jquery-2.1.4.js" ></script>
+			<script type="text/javascript">
+				//jQuery绑定事件的方法
+				$(function(){
+					$("#div").click(function(){
+						alert("div");
+					});
+					/*
+					总结5种jQuery绑定事件的方法
+					*/
+					/*$("#btn").click(function(){   //默认冒泡
+						alert("btn");
+					});
+					$("#btn").bind('click',function(){  //默认冒泡
+						alert("btn");
+					});
+					$("#btn").one($("#btn"),'click',function(){
+						alert("btn");
+					});
+					$("#div").delegate($("#btn"),'click',function(){
+						alert("btn");
+					});
+					$("#btn").on('click',function(){
+						alert("btn");
+					});
+					*/
+
+				})
+			    
+			</script>
+	</head>
+	<body>
+		<div id="div">this is div.
+			<button id="btn">click me</button>
+		</div>
+	</body>
+</html>
