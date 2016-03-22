@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<head>
+			<title></title>
+			<script type="text/javascript" src="jquery-2.1.4.js" ></script>
+			<script type="text/javascript">
+
+				$(function(){
+					$("#btn").click(function(){  
+						//身份证验证
+						/*var pattern = /^[1-9]\d{5}[1-9]\d{3}[0|1]\d[0|1|2|3]\d{4}[\d|x|X]$/;
+						alert(pattern.test($("#test").val()));*/
+
+						//数单词数
+						var str = $("#test").val();
+						var result = str.match( /\b[A-Za-z]+\b/g);
+						console.log(result.length);
+					});
+				});
+							    
+			</script>
+	</head>
+	<body>
+		<input type="text" id="test"/>
+		<button id="btn">click me</button>
+	</body>
+</html>
