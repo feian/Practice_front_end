@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<head>
+			<title></title>
+			<script type="text/javascript" src="jquery-2.1.4.js" ></script>
+			<script type="text/javascript">
+				$(function(){
+					String.prototype.trim = function(){
+						//return this.replace(/\s+/g,""); //去掉所有空格
+						return this.replace(/^\s+/,"").replace(/\s+$/,""); //去掉前后空格
+					}
+					$("#btn").click(function(){
+						alert($("#input").val().length);
+						alert($("#input").val().trim().length);
+					});
+				})
+				
+			</script>
+	</head>
+	<body>
+		<input type="text" id="input"/>
+		<button id="btn">click me</button>
+	</body>
+</html>
