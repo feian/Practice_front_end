@@ -1,0 +1,39 @@
+				//1.构造函数式继承
+				function People(name,age){
+				　　this.name = name;
+				　　this.age = age;
+				　　this.hi = function(){alert(hi);};
+				}
+
+				function Student(name,age,class){
+				    People.call(this,name,age);
+				    this.class = class;
+				}
+
+				//2.原型继承
+				function People(){
+				　　this.hi = function(){
+				          alert("hello");
+				     };
+				}
+
+				function Person(){};
+				Person.prototype = new People();
+
+				//3.混合式继承
+
+				//4.Object.create()
+				function create(proto){ //要继承的父类的原型
+				　　function F(){};
+				　　F.prototype = proto; 　　
+				   return new F(); 
+				}
+
+				//5.复制继承
+				var foo = {};
+				var prop;
+				for(prop in obj){
+				     if(!foo[prop]){
+				           foo[attr] = obj[attr];
+				     }
+				}
