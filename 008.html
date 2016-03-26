@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<head>
+			<title></title>
+			<style>
+			.float{
+				float: left;
+			}
+			.absolute{
+				position: absolute;
+			}
+			.inline{
+				display: inline;
+			}
+			.inlineBlock{
+				display: inline-block;
+			}
+			.table{
+				display: table;
+			}
+			</style>
+	</head>
+	<body>
+		<!--
+		float 和absolute脱离文档流 width=0
+		block的width=拉伸
+		inline-block的width=0
+		table的width=0
+		inline的width=auto
+		 -->
+		<div></div> <!--width=拉伸 -->
+		<div class="float"></div> <!--width=0 -->
+		<div class="absolute"></div> <!--width=0 -->
+		<div class="inline"></div> <!--width=auto -->
+		<div class="inlineBlock"></div> <!--width=0 -->
+		<div class="table"></div> <!--width=0 -->
+	</body>
+</html>
