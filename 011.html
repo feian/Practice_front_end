@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<head>
+			<title></title>
+			<style>
+			p{
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				width: 200px;
+			}
+			</style>
+	</head>
+	<body>
+		<!-- 
+			这只是我试过的一种方案。需要同时满足4个条件：
+			1.white-space: nowrap;
+			2.overflow: hidden;
+			3.text-overflow: ellipsis;
+			4.文字超过了元素当前width
+			5.在p元素内，换成span就不可以了
+		-->
+		<p>
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+			这是一段测试的文字。
+		</p>
+	</body>
+</html>
