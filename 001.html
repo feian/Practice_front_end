@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<ul>
+	<li>111</li>
+	<li>222</li>
+	<li>333</li>
+	<li>444</li>
+	<li>555</li>
+	</ul>
+		<script type="text/javascript" src="../jquery-2.1.4.js" ></script>
+		<script>
+		/*
+			事件委托（代理）
+			须知事件冒泡，检测事件源。
+			作用：把事件处理绑定到父级元素上，减少过多事件注册。
+			
+			下例是js和jQeruy的委托。注意两者中的this不同！
+			$(parent).delegate(chilren,event,[data],callback)
+
+		*/
+		document.querySelector("ul").onclick = function(e){
+			//console.log(this);  //ul
+			e = e || window.event;
+			var tagE = e.target || e.srcElement;
+			if(tagE.tagName.toLowerCase() == 'li'){
+				alert(tagE.innerHTML);
+		    }
+		}
+		/*$(function(){
+			$("ul").delegate("li","click",function(e){
+			  	//console.log(this);  //事件源节点
+			  	if(this.tagName.toLowerCase() == 'li'){
+					alert(this.innerHTML);
+		    	}
+			});
+		});*/
+		</script>
+	</body>
+</html>
