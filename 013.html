@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="utf-8"/>
+	<head>
+			<title></title>
+			<script type="text/javascript">
+				/*Array.map 待深入*/
+				var data = [1, 2, 3, 4];
+
+				var arrayOfSquares = data.map(function (item) {
+				  return item * item;
+				});
+
+				console.log(arrayOfSquares); // 1, 4, 9, 16
+				
+				/*Array.reduce 求和*/
+				var sum = [1, 2, 3, 4].reduce(function (previous, current, index, array) {
+				  return previous + current;
+				});
+
+				console.log(sum); // 10
+			</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
