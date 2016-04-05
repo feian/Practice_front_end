@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/*
+			写一个求和的函数sum，达到下面的效果
+			// Should equal 15
+			sum(1, 2, 3, 4, 5);
+			// Should equal 0
+			sum(5, null, -5);
+			// Should equal 10
+			sum('1.0', false, 1, true, 1, 'A', 1, 'B', 1, 'C', 1, 'D', 1,
+			  'E', 1, 'F', 1, 'G', 1);
+			// Should equal 0.3, not 0.30000000000000004
+			sum(0.1, 0.2);
+			
+			------------------
+			知识点：
+			1.JavaScript数字不分长短，都用64位存储，即证书最多15位，小数最多17位
+			2.parseInt(string,radix),参数字符串，进制。未指定进制时string以0x开头解析为16进制，以0开发解析为8进制，1~9开头解析为10进制。字符串以非数字开头时返回NaN，以数字开头截取数字部分（遇到空格、逗号等非数字停止截取），以空格开头忽略开头的空格。
+			3.parseFloat(string)同上。 Number.toFixed(n)四舍五入保存n位小数。也可以先剩10^n再除。
+
+			*/
+
+			function sum(){
+				var i,
+				    total = 0,
+				    length = arguments.length;
+				for(i=0; i<length; i++) {
+					if(parseFloat(arguments[i],10)){
+						total += parseFloat(arguments[i],10);
+					}
+				}
+				return total.toFixed(3);
+			}
+
+			console.log(sum(0.1,"false",2,'A',-1));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
