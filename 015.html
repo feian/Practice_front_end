@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/*
+				new到底做了什么？下面用伪代码说明过程
+
+				new Animal("cat") = {
+
+				    var obj = {};  //创建一个空对象
+
+				    obj.__proto__ = Animal.prototype; //新对象的原型指向构造函数的原型
+
+				    obj.constructor = Animal; //新对象构造器指向构造函数
+
+				    var result = Animal.call(obj,"cat"); //执行一遍构造函数，里面的this指向obj。
+
+				    return typeof result === 'object'? result : obj; //默认返回的是指向新对象的this指针，new操作得到的新对象就是Animal的实例。但如果Animal定义了返回值且返回的是引用类型，new操作得到的是这个显示声明的返回值对象，与Animal没有继承关系。
+				}
+
+				如此，
+			*/
+
+			function Animal(name){
+				//var o = {};
+				//o.name = name;
+			    //return o;
+			    if(name){
+			    	this.name = name;
+			    }
+			    return this;
+			}
+			Animal.prototype.name = "animal";
+
+			var a = Animal("dog");
+			var b = new Animal("cat");
+			var c = new Animal;
+
+			console.log(a.name); //dog
+			console.log(b.name); //dog
+			console.log(c.name); //animal
+
+
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
