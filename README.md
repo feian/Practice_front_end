@@ -28,3 +28,5 @@
 013:es5的Array新API：map,reduce
 
 014:写一个处理多种情况的求和函数sum
+
+015:new到底做了什么
