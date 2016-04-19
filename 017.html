@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		.header{
+			border: 1px solid green;
+			height: 50px;
+			margin-bottom: 10px;
+		}
+		.logo{
+			border: 1px solid red;
+			width: 44px;
+			height: 40px;
+			margin: 4px auto 4px 4px;
+		}
+		.username{
+			border: 1px solid black;
+			width: 100px;
+			float: right;
+			text-align: right;
+			margin: 25px 4px 2px auto;
+		}
+
+		/* 方案一：左自适应设margin-right，右定宽向右浮动：右div跑到第二行了，设置margin-top负高度 */
+		.content{
+			border: 1px solid blue;
+			margin-right: 220px;
+			height: 500px;
+		}
+		.aside{
+			border: 1px solid red;
+			width: 200px;
+			float: right;
+			margin-top: -500px;
+		}
+
+		/*方案二：左定宽向左浮动，右自适应设margin-left*/
+		/*.content{
+			border: 1px solid blue;
+			width: 200px;
+			height: 500px;
+			float: left;
+		}
+		.aside{
+			border: 1px solid red;
+			margin-left: 210px;
+		}*/
+
+		/*方案三：左适应，右定宽绝对定位 (额外设置父元素relative)*/
+		/*.content{
+			border: 1px solid blue;
+			margin-right: 220px;
+			height: 500px;
+		}
+		.aside{
+			position: absolute;
+			width: 200px;
+			top: 0;
+			right: 0;
+			border: 1px solid red;
+		}*/
+
+		/*方案四：左宽度100%，右负margin，左中子元素才是真正显示内容的，左子设margin-right*/
+
+		/*.container{
+			width: 100%;
+			float: left;
+		}
+
+		.content{
+			border: 1px solid blue;
+			margin-right: 210px;
+			height: 500px;
+		}
+		.aside{
+			border: 1px solid red;
+			width: 200px;
+			float: right;
+			margin-left: -204px;
+		}*/
+
+		.footer{
+			border: 1px solid black;
+			margin-top: 10px;
+			text-align: center;
+		}
+
+		</style>
+	</head>
+	<body>
+		<header class="header">
+			<img class="logo" alt="LOGO"></img>
+			<span class="username" >用户名</span>
+		</header>
+		<section>
+		<!-- <section style="position: relative;"> -->
+			<!-- <div class="container" >
+				<div class="content" >content </div>
+			</div> -->
+			<div class="content" >content </div>
+			<div class="aside" >aside </div>
+		</section>
+		<footer class="footer" >
+			footer
+		</footer>
+	</body>
+</html>
