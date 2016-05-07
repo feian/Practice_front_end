@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		#parent{
+			width: 300px;
+			height: 300px;
+			margin-left: 100px;
+		}
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+		#div2{
+			width: 300px;
+			height: 300px;
+			background: blue;
+			position: relative;
+			top: -200px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id='parent'>
+			<div id = 'div1'>	
+			</div>
+		</div>
+		<div id = 'div2'>
+		</div>
+		<script>
+			var div1 = document.querySelector('#div1');
+			var div2 = document.querySelector('#div2');
+
+			function isOverlap(e1,e2){
+				var overlapX = false,
+					overlapY = false,
+
+					top1 = e1.offsetTop,
+					top2 = e2.offsetTop,
+
+					left1 = e1.offsetLeft,
+					left2 = e2.offsetLeft,
+
+					height1 = e1.offsetHeight,
+					height2 = e2.offsetHeight,
+
+					width1 = e1.offsetWidth,
+					width2 = e2.offsetWidth;
+
+				if(top1<top2 ){
+					if(top1+height1>top2){
+						overlapY = true;
+					}
+				} else {
+					if(top2+height2>top1){
+						overlapY = true;
+					}
+				}
+
+				if(left1>left2 ){
+					if(left1+width1>left2){
+						overlapX = true;
+					}
+				} else {
+					if(left2+width2>left1){
+						overlapX = true;
+					}
+				}
+
+				return overlapX && overlapY;
+			}
+			
+			if(isOverlap(div2,div1)){
+				alert('重叠了');
+			} else {
+				alert('没重叠');
+			}
+			
+		</script>
+	</body>
+</html>
