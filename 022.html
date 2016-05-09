@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		.size{
+			width: 100px;
+			height: 100px;
+		}
+		.blue{
+			background: blue;
+		}
+		.red{
+			background: red;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="size blue">
+		</div>
+		<script>
+			var div = document.querySelector('div');
+			console.log(div.className); //"size blue"
+
+			div.classList.add('red');
+			console.log(div.className); //"size blue red"
+
+			div.classList.remove('red');
+			console.log(div.className); //"size blue"
+
+			if(!div.classList.contains('red')){
+				console.log('类已被移除'); 
+			}
+
+			div.onclick = function(){
+				div.classList.toggle('red');
+			};
+		</script>
+	</body>
+</html>
