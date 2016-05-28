@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		#parent{
+			width: 500px;
+			height: 500px;
+			background: red;
+			overflow: auto;
+			border: 5px;
+			padding: 5px;
+			margin: 5px;
+		}
+		#child{
+			width: 800px;
+			height: 800px;
+			background: blue;
+			border: 5px;
+			padding: 5px;
+			margin: 5px;
+		}
+		</style>
+		
+	</head>
+	<body>
+		<div id = 'parent'>
+			<div id = 'child'>
+			</div>
+		</div>
+		<button onclick='show()'>click</button>
+		<script>
+			var parent = document.querySelector('#parent');
+			var child = document.querySelector('#child');
+			
+			//包含内边距和边框
+			console.log('offsetHeight');   //510 510 810 810 
+			console.log(parent.offsetHeight);
+			console.log(parent.offsetWidth);
+			console.log(child.offsetHeight);
+			console.log(child.offsetWidth);
+
+			//取元素内容宽度和元素本身宽度更大者
+			console.log('scrollHeight');    //830 820 810 810
+			console.log(parent.scrollHeight);
+			console.log(parent.scrollWidth);
+			console.log(child.scrollHeight);
+			console.log(child.scrollWidth);
+
+			//只包含内边距，不包含滚动条、边框、外边距
+			console.log('clientHeight');    //493 493 810 810
+			console.log(parent.clientHeight);
+			console.log(parent.clientWidth);
+			console.log(child.clientHeight);
+			console.log(child.clientWidth);
+
+			function show(){
+				//相对上一级的偏移
+				console.log('offsetTop');   //510 510 810 810 
+				console.log(parent.offsetTop);
+				console.log(parent.offsetLeft);
+				console.log(child.offsetTop);
+				console.log(child.offsetLeft);
+
+				//滚动条卷进去的偏移
+				console.log('scrollTop');    //830 820 810 810
+				console.log(parent.scrollTop);
+				console.log(parent.scrollLeft);
+				console.log(child.scrollTop);
+				console.log(child.scrollLeft);
+
+				//边框的厚度
+				console.log('clientTop');    //493 493 810 810
+				console.log(parent.clientTop);
+				console.log(parent.clientLeft);
+				console.log(child.clientTop);
+				console.log(child.clientLeft);
+			}
+
+		</script>
+	</body>
+</html>
